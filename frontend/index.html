@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Paragraph Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="ai para ass.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>AI Paragraph Assistant</h1>
+        <button id="themeToggle">🌙 Dark Mode</button>
+    </header>
+
+    <main>
+        <!-- Left side: Input + Output -->
+        <div class="left-side">
+            <section class="input-section card">
+                <textarea id="inputText" placeholder="Paste your paragraph here..."></textarea>
+                <div class="controls">
+                    <select id="action">
+                        <option value="summarize">Summarize</option>
+                        <option value="quiz">Generate Quiz</option>
+                        <option value="simplify">Simplify Text</option>
+                        <option value="eli5">Explain Like I'm 5</option>
+                        <option value="translate">Translate (Urdu)</option>
+                        <option value="keypoints">Key Points</option>
+                    </select>
+                    <!-- <input type="range" id="speed" min="1" max="100" value="20" title="Typing Speed"> -->
+                </div>
+                <div class="buttons">
+                    <button onclick="generate()">Generate</button>
+                    <button onclick="copyOutput()">Copy Output</button>
+                    <button onclick="downloadPDF()">Download PDF</button>
+                </div>
+            </section>
+
+            <section class="output-section card">
+                <h2>Output</h2>
+                <div id="output"></div>
+            </section>
+        </div>
+
+        <!-- Right side: History -->
+        <section class="history-section card">
+            <h2>History</h2>
+            <ul id="historyList"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
