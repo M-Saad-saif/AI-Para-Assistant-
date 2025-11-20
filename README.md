@@ -31,37 +31,6 @@ Designed to help students, educators, and content creators work smarter with tex
 
 ## 📁 Project Structure
 
-AI-Paragraph-Assistant/
-│
-├── backend/                 # Node.js Express Backend
-│   ├── app.js              # Main server file
-│   ├── package.json        # Backend dependencies
-│   ├── package-lock.json   # Lock file
-│   ├── node_modules/       # Dependencies (ignored)
-│   └── .env                # Environment variables (ignored)
-│
-├── frontend/               # Web Frontend
-│   ├── index.html          # Main HTML file
-│   ├── style.css           # Stylesheets
-│   ├── script.js           # Client-side JavaScript
-│   └── icons/              # UI icons and assets
-│
-└── README.md               # Project documentation
-
----
-
-## ⚙️ Tech Stack
-
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** Node.js, Express  
-- **AI API:** Generative AI model (replaceable with your preferred API)  
-- **PDF Generation:** jsPDF library  
-- **Version Control:** Git & GitHub
-  
----
-
-## 📁 Project Structure
-
 ```
 
 AI-Paragraph-Assistant/
