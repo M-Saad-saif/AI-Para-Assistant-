@@ -1,6 +1,6 @@
 # AI Paragraph Assistant
 
-A modern web application that uses **Generative AI** to process paragraphs and perform multiple actions like summarizing, generating quizzes, simplifying text, translating, and more.  
+A modern web application that uses **Generative AI** to process paragraphs and perform multiple actions like summarizing, generating quizzes, simplifying text, translating, and more..  
 Designed to help students, educators, and content creators work smarter with text content.
 
 ---
@@ -114,7 +114,7 @@ It will connect to your backend API running locally.
 
 ## 🎨 Screenshots
 
-*<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/914c0dd2-11fd-417c-bf27-dfb53290f64b" />
+*<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/914c0dd2-11fd-417c-bf27-dfb53290f64b" />
 
 
 ---
