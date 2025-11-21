@@ -1,6 +1,6 @@
 # AI Paragraph Assistant
 
-A modern web application that uses **Generative AI** to process paragraphs and perform multiple actions like summarizing, generating quizzes, simplifying text, translating, and more.  
+A modern web application that uses **Generative AI** to process paragraphs and perform multiple actions like summarizing, generating quizzes, simplifying text, translating, and more..  
 Designed to help students, educators, and content creators work smarter with text content.
 
 ---
