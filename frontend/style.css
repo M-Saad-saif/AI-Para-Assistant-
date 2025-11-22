@@ -69,7 +69,7 @@ main {
 
 /* Input Section */
 textarea {
-    width: 92%;
+    width: 55vw;
     height: 150px;
     padding: 15px;
     border-radius: 8px;
@@ -90,6 +90,14 @@ input[type=range] {
     padding: 8px;
     border-radius: 6px;
     border: 1px solid #ccc;
+}
+
+.input-section h2 {
+    color: #4f46e5;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 13px;
+    font-size: 2vw
 }
 
 /* Buttons */
@@ -258,7 +266,7 @@ body.dark-mode #output {
     }
 
     /* small header padding tweak */
-    header {    
+    header {
         padding-right: 12px;
     }
 
@@ -277,13 +285,19 @@ body.dark-mode #output {
         align-self: anchor-center;
     }
 
-    .history-section h2{
+    .history-section h2 {
         display: none;
     }
 
     header button {
         padding: 1px;
     }
-}
 
-/* ...existing code... */
+    textarea {
+        width: 92%;
+    }
+
+    .input-section h2 {
+        font-size: 5vw
+    }
+}
