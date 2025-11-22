@@ -24,7 +24,7 @@ async function generate() {
 
   try {
     const response = await fetch(
-      "https://https://ai-para-assistant.onrender.com/generate",
+      "https://ai-para-assistant.onrender.com/generate",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -33,7 +33,7 @@ async function generate() {
     );
     const data = await response.json();
     const result = data.result || data.error || "";
-
+    
     outputDiv.innerText = "";
     await typeWriter(result, outputDiv, speed);
 
