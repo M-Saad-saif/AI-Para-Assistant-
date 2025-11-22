@@ -5,8 +5,10 @@ import Groq from "groq-sdk";
 
 dotenv.config();
 
-const app = express();
-app.use(cors());
+// adding this
+const FRONTEND_URL = process.env.FRONTEND_URL || "*";
+app.use(cors({ origin: FRONTEND_URL }));
+
 app.use(express.json());
 
 const client = new Groq({ apiKey: process.env.GROQ_API_KEY });
@@ -16,7 +18,7 @@ app.post("/generate", async (req, res) => {
 
   let prompt = "";
 
-  switch(action) {
+  switch (action) {
     case "summarize":
       prompt = `Summarize this text in simple short points:\n\n${text}`;
       break;
@@ -51,4 +53,6 @@ app.post("/generate", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+// adding this
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
