@@ -138,9 +138,10 @@ This project is **open-source** and available under the **MIT License**.
 
 **Muhammad Saad Saif** 
 
-* GitHub: [M-Saad-saif](https://github.com/M-Saad-saif)
-* Email: [saadsaif@example.com](gcsaadsaif123@gmail.com)
+* GitHub: https://github.com/M-Saad-saif
+* Email: gcsaadsaif123@gmail.com
 
+---  
 ---
 
 
