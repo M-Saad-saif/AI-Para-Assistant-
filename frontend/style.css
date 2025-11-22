@@ -247,13 +247,18 @@ body.dark-mode #output {
         margin-bottom: 12px;
     }
 
-    /* hide original in-layout history when it has been moved */
-    .history-section.moved-to-nav {
-        display: none !important;
+    /* remove/hide rule that made moved history invisible */
+    /* .history-section.moved-to-nav { display: none !important; } */
+
+    /* optional: add a marker class for styling when in nav, but don't hide it */
+    .history-section.in-nav {
+        /* small styling tweak if needed (no display:none) */
+        width: 100%;
+        box-sizing: border-box;
     }
 
     /* small header padding tweak */
-    header {
+    header {    
         padding-right: 12px;
     }
 
@@ -270,6 +275,14 @@ body.dark-mode #output {
     .card {
         width: 102%;
         align-self: anchor-center;
+    }
+
+    .history-section h2{
+        display: none;
+    }
+
+    header button {
+        padding: 1px;
     }
 }
 

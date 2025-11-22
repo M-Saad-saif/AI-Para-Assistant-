@@ -82,27 +82,46 @@ function downloadPDF() {
   doc.save("AI_Output.pdf");
 }
 
+function handleHistoryPlacement() {
+  if (!originalHistorySection || !historyNav || !mainEl) return;
+  const w = window.innerWidth;
+  const inRange = w >= 300 && w <= 700;
+  const historyCard = historyNav.querySelector(".history-card");
+
+  if (inRange && historyCard && originalHistorySection.parentElement !== historyCard) {
+    originalHistorySection.classList.remove("moved-to-nav");
+    originalHistorySection.classList.add("in-nav");
+    historyCard.appendChild(originalHistorySection); // move it into nav (do not hide)
+  } else if (!inRange && originalHistorySection.parentElement !== mainEl) {
+    originalHistorySection.classList.remove("in-nav");
+    mainEl.appendChild(originalHistorySection); // move it back
+    closeNav();
+  }
+}
+
 function addToHistory(text, action, result) {
   history.unshift({ text, action, result });
   if (history.length > 10) history.pop();
-  renderHistory();
+  renderHistory(); // ensure UI updates after changes
 }
 
 function renderHistory() {
   const list = document.getElementById("historyList");
+  if (!list) return;
   list.innerHTML = "";
   history.forEach((item) => {
     const li = document.createElement("li");
+    li.tabIndex = 0;
     li.innerText = `${item.action}: ${item.text.substring(0, 30)}...`;
     li.onclick = () => {
       document.getElementById("inputText").value = item.text;
       document.getElementById("action").value = item.action;
       document.getElementById("output").innerText = item.result;
+      if (historyNav && historyNav.classList.contains("open")) closeNav();
     };
     list.appendChild(li);
   });
 }
-// const history = [];
 
 // safe DOM refs
 const historyToggle = document.getElementById("historyToggle");
@@ -135,44 +154,6 @@ historyToggle && historyToggle.addEventListener("click", () => {
 });
 historyClose && historyClose.addEventListener("click", closeNav);
 navOverlay && navOverlay.addEventListener("click", closeNav);
-
-// move/restore the history-section based on width
-function handleHistoryPlacement() {
-  if (!originalHistorySection) return;
-  const w = window.innerWidth;
-  const inRange = w >= 300 && w <= 700;
-  const historyCard = historyNav && historyNav.querySelector(".history-card");
-
-  if (inRange && historyCard && originalHistorySection.parentElement !== historyCard) {
-    originalHistorySection.classList.add("moved-to-nav");
-    historyCard.appendChild(originalHistorySection);
-  }
-  if (!inRange && originalHistorySection.parentElement !== mainEl) {
-    originalHistorySection.classList.remove("moved-to-nav");
-    // put it back as the last child of main (same visual order as before)
-    mainEl.appendChild(originalHistorySection);
-    closeNav();
-  }
-}
-
-// ensure renderHistory is safe
-function renderHistory() {
-  const list = document.getElementById("historyList");
-  if (!list) return;
-  list.innerHTML = "";
-  history.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerText = `${item.action}: ${item.text.substring(0, 30)}...`;
-    li.onclick = () => {
-      document.getElementById("inputText").value = item.text;
-      document.getElementById("action").value = item.action;
-      document.getElementById("output").innerText = item.result;
-      // auto-close nav on selection on small screens
-      if (historyNav && historyNav.classList.contains("open")) closeNav();
-    };
-    list.appendChild(li);
-  });
-}
 
 // run on load and resize
 window.addEventListener("resize", handleHistoryPlacement);
