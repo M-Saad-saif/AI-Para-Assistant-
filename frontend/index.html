@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Paragraph Assistant</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -9,11 +12,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </head>
+
 <body>
     <header>
         <h1>AI Paragraph Assistant</h1>
-        <button id="themeToggle">🌙 Dark Mode</button>
+        <div class="header-actions">
+            <button class="header-btn" id="themeToggle">🌙 Dark Mode</button>
+            <button class="header-btn" id="historyToggle" aria-controls="historyNav" aria-expanded="false">☰ History</button>
+        </div>
     </header>
+
+    <!-- overlay and off-canvas nav (used only on small widths 300-700px) -->
+    <div id="navOverlay" class="hidden" tabindex="-1"></div>
+    <nav id="historyNav" class="history-nav" aria-hidden="true">
+        <div class="history-card card">
+            <div class="history-header">
+                <h2>History</h2>
+                <button id="historyClose" aria-label="Close history">✕</button>
+            </div>
+            <!-- .history-section (with #historyList) will be moved here by JS on small widths -->
+        </div>
+    </nav>
 
     <main>
         <!-- Left side: Input + Output -->
@@ -53,4 +72,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
