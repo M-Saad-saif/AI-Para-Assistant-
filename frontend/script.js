@@ -20,7 +20,7 @@ async function generate() {
   }
 
   const outputDiv = document.getElementById("output");
-  outputDiv.innerText = "";
+  outputDiv.innerText = "Generating..... 😊";
 
   try {
     const response = await fetch(
