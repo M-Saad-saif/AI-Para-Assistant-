@@ -18,7 +18,7 @@ async function generate() {
     outputDiv.innerText = "";
 
     try {
-        const response = await fetch("http://localhost:3000/generate", {
+        const response = await fetch("http://ai-para-assistant.onrender.com/generate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ text, action })
