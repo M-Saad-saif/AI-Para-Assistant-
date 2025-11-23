@@ -8,7 +8,7 @@ dotenv.config();
 // adding this
 
 const app = express();
-const FRONTEND_URL = "https://ai-para-assistant.vercel.app"; // your frontend URL
+const FRONTEND_URL = "https://ai-para-assistant.vercel.app"; 
 app.use(cors({
     origin: FRONTEND_URL,
     methods: ["GET", "POST"]
