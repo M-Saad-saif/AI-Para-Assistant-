@@ -181,7 +181,6 @@ body.dark-mode #output {
     display: none;
 }
 
-/* ...existing code... */
 
 /* default: overlay/nav hidden on larger screens */
 #navOverlay {

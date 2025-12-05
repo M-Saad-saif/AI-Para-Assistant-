@@ -5,8 +5,6 @@ import Groq from "groq-sdk";
 
 dotenv.config();
 
-// adding this
-
 const app = express();
 const FRONTEND_URL = "https://ai-para-assistant.vercel.app"; 
 app.use(cors({
